@@ -7,7 +7,7 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'Poppins', sans-serif; */
 
 /* CSS style to change the default things */
-::selection {
+nav ::selection {
   background-color: transparent;
 }
 
@@ -40,9 +40,10 @@ li {
   width: 100%;
   padding: 5px;
   box-shadow: 0px 1px 10px 5px #30303067;
+  z-index: 3;
 }
 nav {
-  /* background-color: red; */
+  /* background-color: yellow; */
   position: relative;
   display: flex;
   align-items: center;
@@ -56,18 +57,28 @@ nav {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   height: 100%;
   width: 40%;
   padding: 5px;
+  /* z-index: 2; */
 }
 .logo span a {
+  /* background-color: yellow; */
+  text-align: center;
   padding: 5px;
   color: #ef54f5;
   font-size: 30px;
   font-weight: 600;
   font-variant: small-caps;
+}
+.logo .menu-icon {
+  /* background-color: blue; */
+  position: relative;
+  display: none;
+  height: 100%;
+  width: fit-content;
   padding: 5px;
 }
 .nav-tabs {
@@ -79,8 +90,7 @@ nav {
   height: 100%;
   width: 60%;
   padding: 5px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 20px;
 }
 .nav-tabs ul {
   position: relative;
@@ -122,4 +132,63 @@ section:nth-child(odd) {
 }
 section:nth-child(even) {
   background-color: tomato;
+}
+
+/* CSS style to the Header page */
+/* section #header {
+} */
+
+/* CSS style for width 940px */
+@media (max-width: 940px) {
+  .nav-bar {
+    padding: 0;
+    box-shadow: none;
+    background: none;
+  }
+  nav {
+    margin-top: 0;
+  }
+  .logo {
+    background-color: white;
+    justify-content: space-between;
+    text-align: left;
+    width: 100%;
+    padding-inline: 20px;
+    box-shadow: 0px 1px 10px 5px #30303067;
+    z-index: 1;
+  }
+  .logo .menu-icon {
+    display: block;
+  }
+  .logo #menu-button {
+    display: block;
+    color: #ef54f5;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav-tabs {
+    /* background-color: yellow; */
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-tabs ul {
+    background-color: rgba(255, 255, 255, 0.836);
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 45px;
+    z-index: 0;
+  }
+  ul li {
+    /* background-color: red; */
+    margin-bottom: 10px;
+  }
 }
