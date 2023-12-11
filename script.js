@@ -27,3 +27,19 @@ window.addEventListener('scroll', function () {
         }
     });
 });
+
+document.querySelector('nav .menu-icon #menu-button i').addEventListener('click', (e) => {
+    e.preventDefault();
+    var nav = document.querySelector('nav .menu-icon #menu-button i')
+    if (nav.classList[1] == 'fa-bars') {
+        document.querySelector('.nav-tabs ul').style.display = 'flex'
+        nav.classList.remove('fa-bars')
+        nav.classList.add('fa-xmark')
+    }
+    else {
+        document.querySelector('.nav-tabs ul').style.display = 'none'
+        nav.classList.add('fa-bars')
+        nav.classList.remove('fa-xmark')
+    }
+
+});
