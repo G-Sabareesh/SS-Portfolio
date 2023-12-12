@@ -143,7 +143,7 @@ main #header {
   height: 100vh;
   width: 100%;
 }
-#header .whole-content {
+#header .header-content {
   /* background-color: red; */
   background-color: white;
   position: relative;
@@ -153,7 +153,7 @@ main #header {
   height: 100%;
   width: 100%;
 }
-.whole-content .bg-img {
+.header-content .bg-img {
   position: relative;
   background-image: url("images/bg-mountain.jpg");
   background-position: center;
@@ -162,7 +162,7 @@ main #header {
   height: 100%;
   width: 100%;
 }
-.whole-content .text-content {
+.header-content .text-content {
   /* background-color: red; */
   position: absolute;
   display: flex;
@@ -180,14 +180,16 @@ main #header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: fade 0.5s ease-in;
+  animation: fade 1s ease-in;
 }
 @keyframes fade {
   from {
     opacity: 0;
+    transform: translateY(10%);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 .text span {
@@ -198,7 +200,8 @@ main #header {
   color: white;
 }
 span .symbol {
-  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
   font-family: 700;
   color: #ef54f5;
 }
@@ -220,7 +223,17 @@ span strong {
 }
 .text-content .link {
   margin-top: 50px;
-  animation: fade 2s ease-in;
+  animation: fadeLink 1s ease-in;
+}
+@keyframes fadeLink {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .link .resume {
   background-color: #da4adf;
@@ -234,6 +247,63 @@ span strong {
   font-variant: normal;
 }
 
+/* CSS style to the education page */
+main #education {
+  /* position: relative; */
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+}
+section .education-content {
+  position: relative;
+  /* background-color: green; */
+  width: 100%;
+  padding: 20px;
+  margin-inline: 20px;
+}
+.details {
+  /* background-color: blue; */
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, 300px);
+  place-content: center;
+  margin: 20px;
+}
+.education-detail {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+}
+.education-detail span {
+  /* background-color: violet; */
+  margin: 5px;
+}
+.education-detail .line {
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.education-detail .line i {
+  display: inline-block;
+  font-size: 8px;
+  margin-left: 5px;
+}
+.education-detail .line .H-line {
+  display: inline-block;
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
 /* CSS style for width 940px */
 @media (max-width: 940px) {
   .nav-bar {
