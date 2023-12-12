@@ -127,16 +127,112 @@ section {
   color: black;
   transform: transition all 20s;
 }
-section:nth-child(odd) {
+/* section:nth-child(odd) {
   background-color: pink;
 }
 section:nth-child(even) {
   background-color: tomato;
-}
+} */
 
 /* CSS style to the Header page */
-/* section #header {
-} */
+main #header {
+  /* background-color: green; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+#header .whole-content {
+  /* background-color: red; */
+  background-color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.whole-content .bg-img {
+  position: relative;
+  background-image: url("images/bg-mountain.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.whole-content .text-content {
+  /* background-color: red; */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.text-content .text {
+  /* background-color: #22222217; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fade 0.5s ease-in;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.text span {
+  padding: 10px;
+  font-size: xx-large;
+  font-variant: small-caps;
+  font-weight: 500;
+  color: white;
+}
+span .symbol {
+  font-size: 40px;
+  font-family: 700;
+  color: #ef54f5;
+}
+span strong {
+  font-weight: 700;
+  font-size: 30px;
+  color: #ef54f5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.text p {
+  /* background-color: violet; */
+  color: rgba(245, 245, 245, 0.747);
+  margin-top: 30px;
+  padding: 10px;
+  font-size: large;
+  font-weight: 200;
+  font-variant: normal;
+}
+.text-content .link {
+  margin-top: 50px;
+  animation: fade 2s ease-in;
+}
+.link .resume {
+  background-color: #da4adf;
+  padding: 10px;
+  border-radius: 5px;
+}
+.resume {
+  color: white;
+  font-size: large;
+  font-weight: 600;
+  font-variant: normal;
+}
 
 /* CSS style for width 940px */
 @media (max-width: 940px) {
