@@ -16,7 +16,7 @@ window.addEventListener('scroll', function () {
     var navLinks = document.querySelectorAll('a')
 
     sections.forEach(function (section) {
-        var sectionTop = section.offsetTop - 50;
+        var sectionTop = section.offsetTop - 150;
         var sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
@@ -36,15 +36,17 @@ window.addEventListener('scroll', function () {
 
 function clickTab() {
     var nav = document.querySelector('nav .menu-icon #menu-button i')
-    if (nav.classList[1] == 'fa-bars') {
-        document.querySelector('.nav-tabs ul').style.display = 'flex'
-        nav.classList.remove('fa-bars')
-        nav.classList.add('fa-xmark')
-    }
-    else if (nav.classList[1] == 'fa-xmark') {
-        document.querySelector('.nav-tabs ul').style.display = 'none'
-        nav.classList.add('fa-bars')
-        nav.classList.remove('fa-xmark')
+    if ((window.innerWidth < 940)) {
+        if (nav.classList[1] == 'fa-bars') {
+            document.querySelector('.nav-tabs ul').style.display = 'flex'
+            nav.classList.remove('fa-bars')
+            nav.classList.add('fa-xmark')
+        }
+        else if (nav.classList[1] == 'fa-xmark') {
+            document.querySelector('.nav-tabs ul').style.display = 'none'
+            nav.classList.add('fa-bars')
+            nav.classList.remove('fa-xmark')
+        }
     }
 }
 document.querySelector('nav .menu-icon #menu-button').addEventListener('click', (e) => {
