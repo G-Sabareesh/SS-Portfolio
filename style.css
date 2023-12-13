@@ -7,7 +7,8 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'Poppins', sans-serif; */
 
 /* CSS style to change the default things */
-nav ::selection {
+::selection,
+nav::selection {
   background-color: transparent;
 }
 
@@ -268,23 +269,45 @@ section .education-content {
   /* background-color: blue; */
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(auto-fill, 350px);
   place-content: center;
   margin: 20px;
 }
 .education-detail {
-  background-color: pink;
+  /* background-color: pink; */
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
-  height: fit-content;
-  padding: 10px;
+  height: 300px;
   border-radius: 5px;
 }
 .education-detail span {
   /* background-color: violet; */
+  display: flex;
+  align-items: start;
+  padding: 5px;
   margin: 5px;
+}
+.education-detail .first-content {
+  /* background-color: red; */
+  height: 30%;
+  width: 100%;
+}
+
+.first-content .year {
+  /* background-color: red; */
+  font-size: large;
+  font-weight: 700;
+  font-variant: normal;
+  letter-spacing: 2px;
+}
+.first-content .course {
+  /* background-color: orange; */
+  color: #222;
+  font-size: medium;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 .education-detail .line {
   /* background-color: white; */
@@ -295,14 +318,47 @@ section .education-content {
 }
 .education-detail .line i {
   display: inline-block;
+  color: #ef54f5;
   font-size: 8px;
-  margin-left: 5px;
 }
 .education-detail .line .H-line {
   display: inline-block;
   height: 1px;
   width: 100%;
+  padding: 0;
   background-color: black;
+}
+.education-detail .second-content {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+}
+.second-content span {
+  /* background-color: green; */
+  display: flex;
+  align-items: start;
+  padding: 5;
+  margin: 0;
+}
+.second-content .inst-name {
+  /* background-color: red; */
+  font-size: 18px;
+  font-weight: 500;
+  font-variant: normal;
+  letter-spacing: 2px;
+}
+.second-content .inst-place {
+  color: #222;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.second-content .score {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 /* CSS style for width 940px */
 @media (max-width: 940px) {
