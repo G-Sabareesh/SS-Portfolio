@@ -3,9 +3,13 @@
         nav_tab.addEventListener('click', function () {
             document.querySelector('.active-tab').classList.remove('active-tab');
             this.classList.add('active-tab');
-            if (nav_tab.id !== 'header') {
-                clickTab();
+            var navLink = nav_tab.dataset.id
+            if (navLink) {
+                navLink.scrollIntoViewOptions({ behavior: 'smooth' })
             }
+            // if (nav_tab.id !== 'header') {
+            clickTab();
+            // }
         });
     })
 })();
