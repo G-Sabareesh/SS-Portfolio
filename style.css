@@ -16,7 +16,7 @@ nav::selection {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 body {
   background-color: white;
@@ -126,6 +126,7 @@ section {
   flex-direction: column;
   background-color: white;
   color: black;
+  width: 100%;
   border-bottom: 1px solid #838383;
 }
 /* section:nth-child(odd) {
@@ -143,15 +144,6 @@ main #header {
   justify-content: center;
   height: 100vh;
   width: 100%;
-  animation: show 1s;
-}
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 #header .header-content {
   /* background-color: red; */
@@ -190,17 +182,6 @@ main #header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: fade 2s ease-in;
-}
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(10%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 .text span {
   padding: 10px;
@@ -233,18 +214,8 @@ span strong {
 }
 .text-content .link {
   margin-top: 50px;
-  animation: fadeLink 2s ease-in;
 }
-@keyframes fadeLink {
-  from {
-    opacity: 0;
-    transform: translateY(-50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 .link .resume {
   background-color: #da4adf;
   padding: 10px;
@@ -280,11 +251,11 @@ span strong {
 }
 /* CSS style to the education page */
 main #education {
-  /* position: relative; */
+  position: relative;
   background-color: whitesmoke;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height: 100%;
   width: 100%;
 }
@@ -303,6 +274,7 @@ section .education-content {
   grid-template-columns: repeat(auto-fill, 350px);
   place-content: center;
   margin: 20px;
+  overflow: hidden;
 }
 .education-detail {
   /* background-color: pink; */
@@ -393,11 +365,11 @@ section .education-content {
 }
 /* CSS style to the skills page */
 main #skills {
-  /* position: relative; */
+  position: relative;
   background-color: whitesmoke;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height: 100%;
   width: 100%;
 }
@@ -408,6 +380,101 @@ section .skills-content {
   width: 100%;
   padding: 20px;
   margin-inline: 20px;
+}
+.skills-content .skills {
+  /* background-color: red; */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  place-content: center;
+  margin: 20px;
+  overflow: hidden;
+}
+.skills .skill-block {
+  /* background-color: pink; */
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  height: fit-content;
+  border-radius: 5px;
+}
+.skill-block .skill-title {
+  /* background-color: red; */
+  color: #3a3a3a;
+  font-size: x-large;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 10px 10px 30px;
+}
+.skill-block .skill-progress {
+  /* background-color: yellow; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 10px;
+}
+.skill-progress .skill-progress-bar {
+  display: inline-block;
+  background-color: #e6ecf3;
+  height: 10px;
+  width: 80%;
+  border-radius: 10px;
+}
+.skill-progress-bar .progress-bar {
+  position: relative;
+  background-color: #b636ff;
+  height: 10px;
+  border-radius: 10px;
+}
+.skill-progress .skill-progress-value {
+  /* background-color: red; */
+  font-size: large;
+  font-weight: 700;
+  text-align: center;
+  width: 10%;
+}
+
+/* CSS style to the .active-page and .active-tab */
+/* Animation for header text */
+#header.active-page .text-content .text {
+  animation: fade 2s ease-in;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Animation for header downlode link */
+#header.active-page .link {
+  animation: fadeLink 2s ease-in;
+}
+@keyframes fadeLink {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Animation for skill section progress bar */
+#skills.active-page .progress-bar {
+  animation: progress_width 1.5s linear;
+}
+@keyframes progress_width {
+  from {
+    width: 0;
+  }
 }
 /* CSS style for width 940px */
 @media (max-width: 940px) {
