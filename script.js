@@ -1,8 +1,13 @@
 (function () {
     [...document.querySelectorAll('a')].forEach(nav_tab => {
         nav_tab.addEventListener('click', function () {
+            // console.log(this, nav_tab)
             document.querySelector('.active-tab').classList.remove('active-tab');
             this.classList.add('active-tab');
+            document.querySelector('.active-page').classList.remove('active-page');
+            if (nav_tab.dataset.id) {
+                document.getElementById(nav_tab.dataset.id).classList.add('active-page');
+            }
             // console.log(nav_tab.dataset.id)
             var navLink = document.getElementById(nav_tab.dataset.id)
             if (navLink) {
@@ -25,14 +30,16 @@ window.addEventListener('scroll', function () {
         var sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            section.classList.add('active-page');
+            // section.classList.add('active-page');
             navLinks.forEach(link => {
-                link.classList.remove('active-tab')
+                link.classList.remove('active-tab');
+                [...document.querySelectorAll('.active-page')].forEach(active_page => {
+                    active_page.classList.remove('active-page');
+                    document.getElementById(section.id).classList.add('active-page')
+                });
             })
-            if (section.id == 'header') {
-                document.getElementById('header').classList.add('active-tab');
-            }
-            else {
+            if (section.id !== 'header') {
+                // document.getElementById(section.id).classList.add('active-tab');
                 document.querySelector('li a[href="#' + section.id + '"]').classList.add('active-tab');
             }
         }
