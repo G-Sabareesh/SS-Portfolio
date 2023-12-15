@@ -211,6 +211,7 @@ span strong {
   font-size: large;
   font-weight: 200;
   font-variant: normal;
+  margin-bottom: 10px;
 }
 .text-content .link {
   margin-top: 50px;
@@ -298,14 +299,14 @@ section .education-content {
   width: 100%;
 }
 
-.first-content .year {
+.education-detail .first-content .year {
   /* background-color: red; */
   font-size: large;
   font-weight: 700;
   font-variant: normal;
   letter-spacing: 2px;
 }
-.first-content .course {
+.education-detail .first-content .course {
   /* background-color: orange; */
   color: #222;
   font-size: medium;
@@ -313,23 +314,23 @@ section .education-content {
   letter-spacing: 2px;
 }
 
-.line {
+.education-detail .line {
   /* background-color: white; */
   display: flex;
   width: 100%;
 }
-.line i {
+.education-detail .line i {
   display: inline-block;
   color: #ef54f5;
   font-size: 8px;
   margin-right: 5px;
 }
-.line .H-line {
+.education-detail .line .H-line {
   /* background-color: violet; */
   position: relative;
   width: 100%;
 }
-.H-line .Mline {
+.education-detail .H-line .Mline {
   position: absolute;
   background-color: black;
   top: 50%;
@@ -444,7 +445,119 @@ section .skills-content {
   text-align: center;
   width: 10%;
 }
-
+/* CSS style to experience page */
+main #experience {
+  background-color: whitesmoke;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+#experience .experience-content {
+  /* background-color: black; */
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+.experience-content .experience-block {
+  /* background-color: violet; */
+  display: grid;
+  grid-template-columns: 1fr 15px 1fr;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 20px;
+}
+.first-container {
+  /* background-color: blue; */
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  height: 100%;
+}
+.first-container span {
+  margin: 5px;
+}
+.first-container .year {
+  font-size: large;
+  font-weight: 700;
+  font-variant: normal;
+  letter-spacing: 2px;
+}
+.first-container .program {
+  color: #222;
+  font-size: medium;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.experience-block .line {
+  /* background-color: orange; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.experience-block .line i {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ef54f5;
+  font-size: 10px;
+  width: 100%;
+  margin: 2px 0px;
+}
+.experience-block .line .H-line {
+  /* background-color: blue; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.experience-block .H-line .Mline {
+  content: "";
+  height: 0;
+  width: 4px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  border-radius: 5px;
+}
+.second-container {
+  /* background-color: green; */
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
+  height: 100%;
+}
+.second-container span {
+  /* background-color: red; */
+  margin: 5px;
+}
+.second-container .company {
+  font-size: 18px;
+  font-weight: 500;
+  font-variant: normal;
+  letter-spacing: 2px;
+}
+.second-container .company-place {
+  color: #222;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.second-container .company-desc {
+  color: #222;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
 /* CSS style to the .active-page and .active-tab */
 /* Animation for header text */
 #header.active-page .text-content .text {
@@ -481,6 +594,19 @@ section .skills-content {
 @keyframes progress_width {
   from {
     width: 0;
+  }
+}
+#experience.active-page .H-line .Mline {
+  animation: progress_height 2s linear forwards;
+}
+@keyframes progress_height {
+  from {
+    height: 0;
+    background-color: #b636ff;
+  }
+  to {
+    height: 100%;
+    background-color: #b636ff;
   }
 }
 /* CSS style for width 940px */
