@@ -575,7 +575,7 @@ main #experience {
   text-align: justify;
   text-justify: inter-word;
 }
-/* CSS style to experience page */
+/* CSS style to profile page */
 main #profile {
   background-color: whitesmoke;
   position: relative;
@@ -607,6 +607,7 @@ main #profile {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: black;
   height: 150px;
   margin: 5px;
   border-radius: 5px;
@@ -619,6 +620,81 @@ main #profile {
 .profile-block span {
   font-size: larger;
   font-weight: 600;
+}
+/* CSS style to portfolio page */
+main #portfolio {
+  background-color: whitesmoke;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+#portfolio .portfolio {
+  /* background-color: red; */
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+}
+.portfolio .portfolio-content {
+  /* background-color: green; */
+  margin-inline: 20px;
+}
+.portfolio-content .portfolio-container {
+  /* background-color: yellow; */
+  columns: 3;
+  width: 100%;
+}
+.portfolio-container .portfolio-block {
+  /* background-color: red; */
+  display: inline-grid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.profile-block .image-section {
+  /* background-color: blue; */
+  width: 100%;
+  height: fit-content;
+}
+.image-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px soild black;
+  border-radius: 5px;
+  scale: 1;
+  transition: all 0.5s;
+}
+.portfolio-block .caption-section {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  scale: 0.5;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.portfolio-block:hover .caption-section {
+  cursor: pointer;
+  opacity: 1;
+  scale: 1;
+  overflow: hidden;
+}
+.portfolio-block:hover img {
+  scale: 1.1;
 }
 /* CSS style to the .active-page and .active-tab */
 /* Animation for header text */
@@ -674,7 +750,6 @@ main #profile {
 }
 /* Animation for profile scetion while hover */
 .profile-content .profile-block:hover {
-  cursor: grabbing;
   animation: profile 1s forwards;
   /* transform: scale(1); */
   background-color: #b636ff;
@@ -773,5 +848,10 @@ main #profile {
   }
   .experience-block:nth-child(even) .second-container {
     text-align: left;
+  }
+  .portfolio-content .portfolio-container {
+    background-color: yellow;
+    columns: 2;
+    width: 100%;
   }
 }
