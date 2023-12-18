@@ -16,7 +16,7 @@ nav::selection {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 body {
   background-color: white;
@@ -29,6 +29,29 @@ a {
 }
 li {
   list-style-type: none;
+}
+
+/* CSS style to scroll top button */
+.scroll-button {
+  background-color: #ef54f5;
+  position: fixed;
+  display: none;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0;
+}
+.scroll-button i {
+  font-size: larger;
+  font-weight: 700;
+  color: white;
+}
+.scroll-button.active {
+  display: flex;
+  opacity: 1;
 }
 
 /* CSS style to the Navigation portion */
@@ -697,6 +720,22 @@ main #portfolio {
   scale: 1.1;
 }
 /* CSS style to the .active-page and .active-tab */
+/* Animation for scroll top buton */
+.scroll-button.active i {
+  display: flex;
+  animation: scrollTop 02s linear infinite;
+}
+@keyframes scrollTop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50%,
+  75% {
+    transform: translateY(-10px);
+  }
+}
 /* Animation for header text */
 #header.active-page .text-content .text {
   animation: fade 2s ease-in;
@@ -850,8 +889,8 @@ main #portfolio {
     text-align: left;
   }
   .portfolio-content .portfolio-container {
-    background-color: yellow;
-    columns: 2;
+    /* background-color: yellow; */
+    columns: 1;
     width: 100%;
   }
 }
