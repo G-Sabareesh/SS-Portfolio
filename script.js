@@ -1,3 +1,10 @@
+// for scroll to top button
+const scroll_button = document.querySelector('.scroll-button');
+
+scroll_button.addEventListener('click', () => {
+    window.scrollTo(0, 0);
+});
+
 (function () {
     [...document.querySelectorAll('a')].forEach(nav_tab => {
         nav_tab.addEventListener('click', function () {
@@ -21,6 +28,7 @@
 })();
 
 window.addEventListener('scroll', function () {
+    this.scroll()
     var sections = document.querySelectorAll('section');
     var scrollPosition = window.scrollY;
     var navLinks = document.querySelectorAll('a')
@@ -45,6 +53,16 @@ window.addEventListener('scroll', function () {
         }
     });
 });
+
+function scroll() {
+    if (window.scrollY > 500) {
+        scroll_button.classList.add("active");
+    }
+    else {
+        scroll_button.classList.remove("active");
+    }
+}
+
 
 function clickTab() {
     var nav = document.querySelector('nav .menu-icon #menu-button i')
