@@ -8,7 +8,8 @@ scroll_button.addEventListener('click', () => {
 (function () {
     [...document.querySelectorAll('a')].forEach(nav_tab => {
         nav_tab.addEventListener('click', function () {
-            // console.log(this, nav_tab)
+            // console.log(this, nav_tab,)
+            // console.log(document.querySelector('.active-tab'))
             document.querySelector('.active-tab').classList.remove('active-tab');
             this.classList.add('active-tab');
             document.querySelector('.active-page').classList.remove('active-page');
@@ -46,8 +47,10 @@ window.addEventListener('scroll', function () {
                     document.getElementById(section.id).classList.add('active-page')
                 });
             })
-            if (section.id !== 'header') {
-                // document.getElementById(section.id).classList.add('active-tab');
+            if (section.id === 'header') {
+                document.getElementById(section.id).classList.add('active-tab');
+            }
+            else if (section.id !== 'header') {
                 document.querySelector('li a[href="#' + section.id + '"]').classList.add('active-tab');
             }
         }
