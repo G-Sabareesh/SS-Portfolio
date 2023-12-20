@@ -94,22 +94,30 @@ nav {
   padding: 5px;
   /* z-index: 2; */
 }
+.logo #home {
+  /* background-color: violet; */
+  position: relative;
+  height: fit-content;
+  width: 100%;
+}
 .logo span a {
   /* background-color: yellow; */
+  position: relative;
   text-align: center;
-  padding: 5px;
   color: #ef54f5;
   font-size: 30px;
   font-weight: 600;
   font-variant: small-caps;
+  width: 100%;
 }
-.logo .menu-icon {
+.nav-tabs .menu-icon {
   /* background-color: blue; */
   position: relative;
   display: none;
   height: 100%;
   width: fit-content;
   padding: 5px;
+  cursor: pointer;
 }
 .nav-tabs {
   /* background-color: aqua; */
@@ -750,12 +758,14 @@ main #about {
 .about-container .description {
   /* background-color: yellow; */
   margin: 5px 0;
+  padding: 10px;
   max-width: 500px;
   height: 100%;
 }
 .description .description-content {
   /* background-color: green; */
   height: fit-content;
+  padding: 5px;
   width: 100%;
 }
 .description .description-content #first,
@@ -776,19 +786,19 @@ main #about {
   font-weight: 500;
   color: #3a3a3aa1;
 }
-.about-container .contactinfo {
+.about-container .aboutinfo {
   /* background-color: tomato; */
   border-top: 2px solid rgba(63, 63, 63, 0.692);
   padding: 20px 0;
 }
-.contactinfo .contactinfo-content {
+.aboutinfo .aboutinfo-content {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
-.contactinfo-content .info {
-  /* background: pink; */
+.aboutinfo-content .info {
+  background: pink;
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -803,7 +813,7 @@ main #about {
   font-weight: 500;
   color: #3a3a3aa1;
 }
-.contactinfo-content span {
+.aboutinfo-content span {
   /* background-color: orange; */
   padding: 2px;
 }
@@ -814,7 +824,9 @@ main #about {
   align-items: center;
   max-width: 500px;
   height: 100%;
-  margin: 10px 0;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 .profile-card .profile-bg-image {
   /* background-color: cyan; */
@@ -928,7 +940,6 @@ main #about {
 /* Animation for profile scetion while hover */
 .profile-content .profile-block:hover {
   animation: profile 1s forwards;
-  /* transform: scale(1); */
   background-color: #b636ff;
   color: white;
   cursor: pointer;
@@ -938,12 +949,7 @@ main #about {
     scale: 1.1;
     opacity: 0;
     transform: rotateY(180deg);
-    scale: 1.5;
   }
-  /* 50% {
-    scale: 1.1;
-    opacity: 1;
-  } */
   100% {
     scale: 1;
     opacity: 1;
@@ -954,25 +960,20 @@ main #about {
 @media (max-width: 940px) {
   .nav-bar {
     padding: 0;
-    box-shadow: none;
-    background: none;
-  }
-  nav {
-    margin-top: 0;
   }
   .logo {
-    background-color: white;
-    justify-content: space-between;
-    text-align: left;
-    width: 100%;
-    padding-inline: 20px;
-    box-shadow: 0px 1px 10px 5px #30303067;
-    z-index: 1;
+    /* background-color: red; */
+    width: 70%;
   }
-  .logo .menu-icon {
+  .nav-tabs .menu-icon {
+    /* background-color: green; */
     display: block;
+    padding: 0;
   }
-  .logo #menu-button {
+  .menu-icon i {
+    cursor: pointer;
+  }
+  .nav-tabs #menu-button {
     display: block;
     color: #ef54f5;
     padding: 5px;
@@ -981,7 +982,7 @@ main #about {
   }
   .nav-tabs {
     /* background-color: yellow; */
-    width: 0;
+    width: 20%;
     margin: 0;
     padding: 0;
   }
@@ -1031,5 +1032,11 @@ main #about {
     /* background-color: yellow; */
     columns: 1;
     width: 100%;
+  }
+  .aboutinfo-content .info {
+    width: 100%;
+  }
+  .profile-bg-image img {
+    max-width: 300px;
   }
 }
