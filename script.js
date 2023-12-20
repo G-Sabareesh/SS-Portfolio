@@ -36,6 +36,7 @@ scroll_button.addEventListener('click', () => {
 
 //on scroll this set of code will process
 window.addEventListener('scroll', function () {
+    scroll();
     //initialize some variable for vh calculation
     var sections = document.querySelectorAll('section');
     var scrollPosition = window.scrollY;
