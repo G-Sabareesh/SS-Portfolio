@@ -49,7 +49,7 @@ li {
 .scroll-button:hover {
   background-color: white;
   color: #ef54f5;
-  border: 1px solid #ef54f5;
+  border: 2px solid #ef54f5;
   cursor: pointer;
 }
 
@@ -145,7 +145,6 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;
   color: black;
   width: 100%;
   border-bottom: 1px solid #838383;
@@ -162,6 +161,7 @@ main #header {
   position: relative;
   display: flex;
   justify-content: center;
+  background-color: #424242;
   height: 100vh;
   width: 100%;
 }
@@ -385,8 +385,9 @@ section .skills-content {
 .skills-content .skills {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
-  place-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 160px));
+  align-items: center;
+  justify-content: center;
   overflow-x: hidden;
 }
 .skills .skill-block {
@@ -395,46 +396,26 @@ section .skills-content {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: fit-content;
-  border-radius: 5px;
-  margin-bottom: 5px;
 }
-.skill-block .skill-title {
-  width: 100%;
-  text-align: left;
-  color: #3a3a3a;
-  font-size: large;
-  font-weight: 500;
-  text-transform: uppercase;
-  padding-left: 20px;
-}
-.skill-block .skill-progress {
+.skill-block .skill-img {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
-  padding: 10px;
 }
-.skill-progress .skill-progress-bar {
-  display: inline-block;
-  background-color: #e6ecf3;
-  height: 10px;
-  width: 80%;
-  border-radius: 10px;
+.skill-block .skill-img img {
+  width: 150px;
 }
-.skill-progress-bar .progress-bar {
-  background-color: #b636ff;
-  position: relative;
-  height: 10px;
-  border-radius: 10px;
-}
-.skill-progress .skill-progress-value {
-  font-size: large;
-  font-weight: 700;
+.skill-block .skill-title {
+  width: 100%;
   text-align: center;
-  width: 10%;
+  color: #3a3a3a;
+  font-size: small;
+  font-weight: 500;
+  text-transform: uppercase;
 }
+
 /* CSS style to experience page */
 main #experience {
   position: relative;
@@ -612,13 +593,32 @@ main #portfolio {
   margin-inline: 20px;
 }
 .portfolio-content .portfolio-container {
-  columns: 3;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas:
+    "sp1 fp sp2"
+    "sp3 fp sp4";
+  padding: 20px;
   width: 100%;
+  gap: 5px;
+}
+.portfolio-container .small1 {
+  grid-area: sp1;
+}
+.portfolio-container .small2 {
+  grid-area: sp2;
+}
+.portfolio-container .small3 {
+  grid-area: sp3;
+}
+.portfolio-container .small4 {
+  grid-area: sp4;
+}
+.portfolio-container .full {
+  grid-area: fp;
 }
 .portfolio-container .portfolio-block {
-  display: inline-grid;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
   width: 100%;
   height: auto;
   position: relative;
@@ -642,10 +642,12 @@ main #portfolio {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.308);
   color: white;
   width: 100%;
   height: 100%;
+  font-size: x-large;
+  font-weight: 700;
   top: 0;
   left: 0;
   opacity: 0;
@@ -766,12 +768,13 @@ main #about {
   position: relative;
   height: auto;
   max-width: 350px;
-  opacity: 0.85;
+  opacity: 0.9;
   scale: 1;
   transition: all 0.5s;
 }
 .profile-bg-image:hover img {
-  scale: 1.5;
+  scale: 1.3;
+  transform: translateY(50px);
 }
 .profile-bg-image .links {
   background-color: rgba(77, 76, 76, 0.322);
@@ -784,15 +787,19 @@ main #about {
   width: 100%;
 }
 .links a {
-  background-color: rgba(0, 0, 0, 0.178);
+  background-color: rgba(0, 0, 0, 0.062);
   text-align: center;
   border-radius: 5px;
   border: 2px groove white;
+  color: white;
   padding: 10px;
 }
 .links a i {
-  color: white;
   font-size: larger;
+}
+.links a:hover {
+  color: #ef54f5;
+  border-color: #ef54f5;
 }
 /* CSS style to contact section */
 main #contact {
@@ -991,15 +998,6 @@ textarea {
     transform: translateY(0);
   }
 }
-/* Animation for skill section progress bar */
-#skills.active-page .progress-bar {
-  animation: progress_width 1.5s linear;
-}
-@keyframes progress_width {
-  from {
-    width: 0;
-  }
-}
 /* Animation for experience section timeline */
 #experience.active-page .H-line .Mline {
   animation: progress_height 2s linear forwards;
@@ -1098,8 +1096,12 @@ textarea {
     text-align: left;
   }
   .portfolio-content .portfolio-container {
-    columns: 1;
-    width: 100%;
+    grid-template-areas:
+      "sp1"
+      "sp2"
+      "fp"
+      "sp3"
+      "sp4";
   }
   .aboutinfo-content .info {
     width: 100%;
