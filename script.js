@@ -102,7 +102,7 @@ document.querySelector('nav .menu-icon #menu-button').addEventListener('click', 
     clickTab()
 });
 
-//while the screen is resice activate the small screen style
+//while the screen is resize activate the small screen style
 window.addEventListener('resize', () => {
     if (window.innerWidth > 940) {
         document.querySelector('.nav-tabs ul').style.display = 'flex'
