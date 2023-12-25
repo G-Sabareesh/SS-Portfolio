@@ -112,3 +112,8 @@ window.addEventListener('resize', () => {
     }
 }
 );
+
+// to change the theme of the website
+document.querySelector(".theme-btn").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+})
