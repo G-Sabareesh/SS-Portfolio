@@ -117,3 +117,42 @@ window.addEventListener('resize', () => {
 document.querySelector(".theme-btn").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 })
+
+//This is for the contactForm this details send that message to the developer
+document.getElementById("submitForm").addEventListener('click', () => {
+    // Retrieve input values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+    
+    if (name === "" || email === "" || subject === "" || message === "") {
+        alert("Please fill all the details.");
+        return; // Stop further execution
+    }
+    else{
+        // Create param array
+        var params = {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+        };
+        emailjs.send("service_w2yek4s", "template_dqslyqn",params).then(alert("Thanks for reaching out! Your email has landed in my inbox.\nI'll reply as soon as possible."));
+        // For demonstration, you can log the params
+        // console.log(params);
+        clearForm();
+    }
+    
+    // Here you can proceed to send the email using AJAX or any other method
+});
+
+// after submit clear the data from the contactForm
+function clearForm(){
+    var formContainer = document.querySelector(".main-user-info");
+    [...formContainer.querySelectorAll("input")].forEach(field => {
+        // console.log(field);
+        field.value = "";
+    });
+    formContainer.querySelector("textarea").value = "";
+}
