@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Open+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap");
 
 ::selection,
 nav::selection {
@@ -654,75 +654,132 @@ main #portfolio {
   margin-inline: 20px;
 }
 .portfolio-content .portfolio-container {
-  display: grid;
-  justify-content: center;
+  display: flex;
   align-items: center;
-  grid-template-areas:
-    "sp1 fp sp2"
-    "sp3 fp sp4";
+  justify-content: center;
+  flex-direction: column;
   padding: 20px;
   width: 100%;
-  gap: 5px;
-}
-.portfolio-container .small1 {
-  grid-area: sp1;
-}
-.portfolio-container .small2 {
-  grid-area: sp2;
-}
-.portfolio-container .small3 {
-  grid-area: sp3;
-}
-.portfolio-container .small4 {
-  grid-area: sp4;
-}
-.portfolio-container .full {
-  grid-area: fp;
 }
 .portfolio-container .portfolio-block {
-  width: 100%;
-  height: auto;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: var(--light-color3) 0px .1px 3px .1px;
+  margin-block: 10px;
+  transition: filter .5s ease-in-out;
+}
+.portfolio-container:hover > .portfolio-block:not(:hover){
+  filter: blur(1.3px);
+}
+.portfolio-first{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+  padding: 5px;
+}
+.portfolio-first .image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+}
+.image-section img {
+  position: relative;
+  width: 350px;
+  height: auto;
+  transition: all 0.5s;
   overflow: hidden;
   border-radius: 5px;
 }
-.portfolio-block .image-section {
-  width: 100%;
-  height: fit-content;
-}
-.image-section img {
-  display: block;
-  width: 100%;
-  height: auto;
-  scale: 1;
+.image-portfolio {
+  position: relative;
   transition: all 0.5s;
+  border-radius: 2px;
+  height: 200px;
+  overflow: hidden;
 }
-.portfolio-block .caption-section {
-  position: absolute;
+.image-portfolio img{
+  width: 400px;
+  transform: translateY(0%);
+}
+.ssportfolio:hover .image-portfolio img{
+  animation: portfolio 5s both;
+}
+@keyframes portfolio {
+  100%{
+   transform: translateY(-90%);
+  }
+}
+.portfolio-second{
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: var(--protfolio-bg-color);
-  color: white;
-  width: 100%;
+  justify-content: center; 
+  flex-direction: column;
   height: 100%;
+  width: 60%;
+  padding: 5px;
+}
+.portfolio-title{
+  width: 100%;
+  height: 60%;
+  margin-bottom: 18px;
+}
+.portfolio-others{
+  width: 100%;
+  height: 70%;
+}
+.portfolio-second .project{
+  width: 100%;
+  margin-block: 2px;
+}
+.project-title{
   font-size: x-large;
-  font-weight: 700;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  scale: 0.5;
-  transition: all 0.5s;
-  overflow: hidden;
+  font-weight: 600;
+  color: var(--light-color1);
 }
-.portfolio-block:hover .caption-section {
-  cursor: pointer;
-  opacity: 1;
-  scale: 1;
-  overflow: hidden;
+.project-subtitle{
+  color: var(--light-color3);
+  text-indent: 30px;
+  font-size: medium;
+  font-weight: 400;
 }
-.portfolio-block:hover img {
-  scale: 1.1;
+.project-description{
+  color: var(--light-color3);
+  font-size: medium;
+  line-height: 1.5;
+  font-weight: 100;
+  text-align: justify;
+}
+.project-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+.project-live, .project-source{
+  font-size: medium;
+  font-weight: 500;
+  margin-inline: 2px;
+  color: var(--light-color2);
+}
+.project-bottom a{
+  font-weight: 300;
+  color: var(--light-color3);
+}
+.project-bottom a:hover{
+  color: var(--light-color1);
+  text-decoration: underline;
+  text-decoration-color: var(--light-color4);
 }
 /* CSS style to experience page */
 main #about {
@@ -1169,19 +1226,17 @@ textarea {
   .experience-block:nth-child(even) .second-container {
     text-align: left;
   }
-  .portfolio-content .portfolio-container {
-    grid-template-areas:
-      "sp1"
-      "sp2"
-      "fp"
-      "sp3"
-      "sp4";
-  }
   .aboutinfo-content .info {
     width: 100%;
   }
   .profile-bg-image img {
     max-width: 300px;
+  }
+  .portfolio-container .portfolio-block {
+    flex-direction: column;
+  }
+  .portfolio-first, .portfolio-second{
+    width: 100%;
   }
   /* Style for form in contact section */
   .user-input-box {
