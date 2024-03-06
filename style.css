@@ -700,25 +700,6 @@ main #portfolio {
   overflow: hidden;
   border-radius: 5px;
 }
-.image-portfolio {
-  position: relative;
-  transition: all 0.5s;
-  border-radius: 2px;
-  height: 200px;
-  overflow: hidden;
-}
-.image-portfolio img{
-  width: 400px;
-  transform: translateY(0%);
-}
-.ssportfolio:hover .image-portfolio img{
-  animation: portfolio 5s both;
-}
-@keyframes portfolio {
-  100%{
-   transform: translateY(-90%);
-  }
-}
 .portfolio-second{
   display: flex;
   align-items: center;
